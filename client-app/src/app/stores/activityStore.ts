@@ -21,6 +21,19 @@ export default class ActivityStore {
             Date.parse(a.date) - Date.parse(b.date))
     }
 
+    // group by date
+    get groupedActivities() {
+        // object of key value pairs 
+        // key is the date and the value is the activities on that date
+        return Object.entries(
+            this.activitiesByDate.reduce((activities, activity) => {
+                const date = activity.date;
+                activities[date] = activities[date] ? [...activities[date], activity] : [activity];
+                return activities;
+            }, {} as {[key: string]: Activity[]})
+        )
+    }
+
 
     // actions
     // using arrow function automatically bindes this function into the class
