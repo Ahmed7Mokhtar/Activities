@@ -6,6 +6,7 @@ import ActivityForm from "../../features/Activities/form/ActivityForm";
 import NotFound from "../../features/Errors/NotFound";
 import ServerError from "../../features/Errors/ServerError";
 import TestError from "../../features/Errors/TestError";
+import LoginForm from "../../features/Users/LoginForm";
 import App from "../layout/App";
 
 // routes
@@ -19,6 +20,7 @@ export const routes: RouteObject[] = [
             // key is for reseting component state for navigating to the same compoenent
             {path: 'createActivity', element: <ActivityForm key='create' />},
             {path: 'manage/:id', element: <ActivityForm key='manage' />},
+            {path: 'login', element: <LoginForm />},
             {path: 'errors', element: <TestError />},
             {path: 'not-found', element: <NotFound />},
             {path: 'server-error', element: <ServerError />},
