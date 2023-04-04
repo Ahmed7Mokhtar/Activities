@@ -11,12 +11,16 @@ const ProfilePage = () => {
 
   const {username} = useParams<{username: string}>();
   const {profileStore} = useStore();
-  const {loadProfile, loadingProfile, profile} = profileStore;
+  const {loadProfile, loadingProfile, profile, setActiveTap} = profileStore;
 
   useEffect(() => {
     if(username)
       loadProfile(username);
-  }, [loadProfile, username])
+
+    return () => {
+      setActiveTap(0);
+    }
+  }, [loadProfile, username, setActiveTap])
 
   if(loadingProfile)
     return <LoadingComponent content='Loading Profile...' />
