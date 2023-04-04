@@ -1,8 +1,10 @@
 Description:
-Full-Stack Website where users can host new event or join to existing events they want to attend with user's ability to real time chat with other users
+
+  Full-Stack Website where users can host new event or join to existing events they want to attend with user's ability to real time chat with other users
   attending the same event with user's profile pages where each user can follow other users.
 
 Back-End:
+  
   Clean Architecture and the CQRS , Mediator design patterns
   
   Entity Framework Core With SQL Server.
